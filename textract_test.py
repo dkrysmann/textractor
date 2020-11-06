@@ -1,13 +1,16 @@
 import boto3
 import json
 import sys
-#from trp import Document
+# from trp import Document
 import trp 
+
+bucket = 'textract-console-eu-west-1-feffc100-d48c-48eb-9c0d-0f1597a47d0d'
+
 
 # Amazon Textract
 textract = boto3.client(
 	service_name = 'textract',
-	region_name = 'us-east-1')
+	region_name = 'eu-west-1')
 
 
 # Amazon s3
@@ -32,12 +35,12 @@ def outputTable(page):
 
 	return csvData
 
-file_name = str(sys.argv[1])
+file_name = 'invoice_sample.pdf' #str(sys.argv[1])
 # try:
 response =textract.analyze_document(
 	Document={
 		'S3Object': {
-			'Bucket':'your_bucket_name',
+			'Bucket':bucket,
 			#'Name':str(sys.argv[1])
 			'Name' : file_name
 		}

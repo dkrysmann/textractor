@@ -2,10 +2,11 @@ import boto3
 import os
 # Amazon s3
 s3 = boto3.resource('s3')
+bucket = 'textract-console-eu-west-1-feffc100-d48c-48eb-9c0d-0f1597a47d0d'
 
 content ="Testing for putting text file in s3 bucket"
 
-s3.Object('your_bucket_name','test_text.txt').put(Body=content)
+s3.Object(bucket,'test-file.txt').put(Body=content)
 
 #test_textract_file
 # for subdir,dirs,files in os.walk('/test_textract_file'):
