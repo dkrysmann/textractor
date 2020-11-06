@@ -9,7 +9,3 @@ for i in data['Blocks']:
     except:
         pass
     
-'''DocumentMetadata
-Blocks
-DetectDocumentTextModelVersion
-ResponseMetadata'''
